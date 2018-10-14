@@ -1,0 +1,12 @@
+version: "3"
+services:
+  nonograms-solver:
+    container_name: nonograms-solver
+    build: .
+    image: swipl/swish
+    restart: on-failure
+    logging:
+      driver: json-file
+      options:
+        max-size: 100k
+    command: tail -f /dev/null
